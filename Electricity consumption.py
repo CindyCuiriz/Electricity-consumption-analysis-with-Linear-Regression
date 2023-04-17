@@ -25,6 +25,13 @@ WEC=pd.read_csv("C:/Users/jocelyn/Desktop/Python/WECproject/WorldEnergyConsumpti
 print(WEC)
 df = pd.DataFrame(WEC)
 
+df_names= ['population','energy_per_gdp','energy_per_capita','gdp','biofuel_consumption','coal_consumption',
+            'gas_consumption', 'hydro_consumption', 'low_carbon_consumption', 'nuclear_consumption', 'oil_consumption',
+            'other_renewable_consumption','renewables_consumption']
+df_corr = df[df_names]
+corr= df_corr.corr()
+sns.heatmap(corr,annot=True)
+
 #variables that we will explore and use for the model: country, year, electricity_generation
 #gdp - GROSS DOMESTIC PRODUCT (Total real gross domestic product, inflation-adjusted) 
 
